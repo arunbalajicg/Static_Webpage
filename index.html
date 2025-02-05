@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Colorful Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #ff6b6b;
+            text-shadow: 2px 2px #feca57;
+        }
+        .color-box {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .color-box:hover {
+            transform: scale(1.1);
+        }
+        #message {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #54a0ff;
+        }
+        button {
+            background-color: #5f27cd;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #341f97;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Fun Color Page!</h1>
+    <p>Click on a color to see its name:</p>
+    <div>
+        <div class="color-box" style="background-color: #ff6b6b;" onclick="showColor('Pastel Red')"></div>
+        <div class="color-box" style="background-color: #feca57;" onclick="showColor('Pastel Yellow')"></div>
+        <div class="color-box" style="background-color: #48dbfb;" onclick="showColor('Pastel Blue')"></div>
+        <div class="color-box" style="background-color: #ff9ff3;" onclick="showColor('Pastel Pink')"></div>
+    </div>
+    <p id="message"></p>
+    <button onclick="changeBackground()">Change Background Color</button>
+
+    <script>
+        function showColor(colorName) {
+            document.getElementById('message').innerText = "You clicked " + colorName + "!";
+        }
+
+        function changeBackground() {
+            const colors = ['#eecda3', '#ef629f', '#c2e59c', '#7f7fd5'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
